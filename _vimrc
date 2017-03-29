@@ -7,7 +7,7 @@
 " Shell stuff here
 
 " Set shell to zsh (fish and VIM don't play well together)
-set shell=bash
+set shell=bash "Comment in WINDOWS
 "Don't dump distracting text to terminal during searches!
 "" set shellpipe=2>/dev/null>
 
@@ -19,8 +19,10 @@ set shell=bash
 "Vundle begins here, turn off filetype temporarily
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
-let path='~\.vim\bundle'
+"set rtp+=$HOME/vimfiles/bundle/Vundle.vim/ "WINDOWS
+let path='~\.vim\bundle' "Comment in WINDOWS
 call vundle#begin()
+"call vundle#begin('$HOME/vimfiles/bundle/') "WINDOWS
 Plugin 'gmarik/vundle'
 
 "My plugins
