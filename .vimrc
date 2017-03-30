@@ -264,7 +264,7 @@ set sidescroll=1
 
 "jj from insert mode to normal mode
 inoremap jj <Esc>
-inoremap <C-j> <Esc>
+"inoremap <C-j> <Esc>
 " pasar de un buffer a otro
 nnoremap gt :bnext<cr>
 nnoremap gT :bprevious<cr>
