@@ -138,7 +138,7 @@ colorscheme evening
 set background=dark
 " Use base-16 for the color scheme, different themes in GUI and terminal
 if has('gui_running')
-    colorscheme molokai
+    colorscheme monokai
 else
     let base16colorspace=256  " Access colors present in 256 colorspace
     colorscheme koehler 
