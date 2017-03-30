@@ -90,7 +90,7 @@ Plugin 'junegunn/goyo.vim'
 
 " Experimenting with these
 """"""""""""""""""""""""""
-
+Plugin 'easymotion/vim-easymotion'
 
 
 " Not Using anymore/right now
@@ -159,7 +159,7 @@ set noshowmode                                  " Let airline handle the mode di
 " General Config
 " ==============
 
-let mapleader='\'               " I just use the default Leader
+let mapleader=','               " Remap leader to ',' the default Leader is '\'
 set encoding=utf-8
 set number                      " Line numbers are nice
 set backspace=indent,eol,start  " Allow backspace in insert mode
@@ -274,7 +274,7 @@ map K i<Enter><Esc>
 "\rr => refresh vimrc
 map <leader>rr :source ~/.vimrc<CR>
 ", acts also like leader \
-nmap , <leader>
+"nmap , <leader> "Doesn't work when need <leader><leader> for easymotion
 
 " Plugin Options
 " ==============
