@@ -138,10 +138,11 @@ colorscheme evening
 set background=dark
 " Use base-16 for the color scheme, different themes in GUI and terminal
 if has('gui_running')
-    colorscheme monokai
+    colorscheme molokai
 else
     let base16colorspace=256  " Access colors present in 256 colorspace
-    colorscheme koehler 
+    colorscheme molokai
+    "colorscheme koehler 
     "colorscheme base16-eighties
     "colorscheme base16-3024
 endif
@@ -264,7 +265,6 @@ set sidescroll=1
 
 "jj from insert mode to normal mode
 inoremap jj <Esc>
-"inoremap <C-j> <Esc>
 " pasar de un buffer a otro
 nnoremap gt :bnext<cr>
 nnoremap gT :bprevious<cr>
