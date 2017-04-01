@@ -152,7 +152,7 @@ endif
 "Set Font
 """""""""
 "set guifont=Liberation\ Mono:h12
-"set guifont=Liberation\ Mono\ 12
+"set guifont=Liberation\ Mono\ 12 " Linux Font
 "set guifont=Lucida\ Console:h14 " Windows Font
 "set guifont=Ubuntu\ Mono\ 14 " Linux Ubuntu Font
 set guifont=Menlo\ Regular:h16
