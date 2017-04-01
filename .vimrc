@@ -63,6 +63,8 @@ Plugin 'wincent/command-t'
 Plugin 'mileszs/ack.vim'
 "Airline provides a stylish appearance for the styleline
 Plugin 'bling/vim-airline'
+"Airline themes
+Plugin 'vim-airline/vim-airline-themes'
 " Syntastic provides syntax info
 Plugin 'scrooloose/syntastic'
 "Integrate with tmux
@@ -274,7 +276,7 @@ map K i<Enter><Esc>
 "\rr => refresh vimrc
 map <leader>rr :source ~/.vimrc<CR>
 ", acts also like leader \
-"nmap , <leader> "Doesn't work when need <leader><leader> for easymotion
+"map , <leader> "Doesn't work when need <leader><leader> for easymotion
 
 " Plugin Options
 " ==============
@@ -288,8 +290,14 @@ map <leader>rr :source ~/.vimrc<CR>
 "    \ }
 
 " Airline options
-"let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1 " Enable tabs in airline
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = ' '
+"let g:airline_powerline_fonts = 1 "Enable symbols, needs a patched font
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_section_z=''
+let g:airline_theme='dark' "Airline Theme
 
 "Markdown options
 let g:vim_markdown_folding_disabled=1
@@ -302,7 +310,8 @@ let NERDTreeHijackNetrw=1 "Put Nerdtree into a window
 augroup pencil
   autocmd!
   autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft'})
-  autocmd FileType text call pencil#init({'wrap': 'hard'})
+  "autocmd FileType text call pencil#init({'wrap': 'hard'})
+  autocmd FileType text call pencil#init({'wrap': 'soft'})
 augroup END
 
 nnoremap <silent> <leader>ps :SoftPencil<cr>
@@ -329,7 +338,7 @@ set wrap linebreak nolist       " Softwrap text
 "set autowrite                   " Save on Focus Lost
 
 "Command-t options
-let g:CommandTMaxFiles=200000
+let g:CommandTMaxFiles=400000
 nnoremap <Leader>a :Ack!<Space>
 
 
