@@ -6,4 +6,4 @@ With Linux and Mac Config
 
 Added experimental Windows Config
 
-First you have to install Vundle: https://github.com/VundleVim/Vundle.vim
+First, you have to install Vundle: https://github.com/VundleVim/Vundle.vim
