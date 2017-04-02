@@ -290,6 +290,7 @@ map <leader>e :edit
 map <leader>f :find 
 map <leader>b :b 
 map <leader>w :w<CR>
+map <leader>q :q<CR>
 
 
 " Plugin Options
