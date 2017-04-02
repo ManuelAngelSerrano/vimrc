@@ -23,7 +23,9 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 let path='~\.vim\bundle' "Comment in WINDOWS
 call vundle#begin()
 "call vundle#begin('$HOME/vimfiles/bundle/') "WINDOWS
-Plugin 'gmarik/vundle'
+"Plugin 'gmarik/vundle
+"" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
 "My plugins
 "==========
@@ -89,17 +91,20 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'reedes/vim-pencil'
 " Distraction-free writing
 Plugin 'junegunn/goyo.vim'
+" Jump to words
+Plugin 'easymotion/vim-easymotion'
+" Autocomplete with tab
+Plugin 'ervandew/supertab'
 
 " Experimenting with these
 """"""""""""""""""""""""""
-Plugin 'easymotion/vim-easymotion'
 
 
 " Not Using anymore/right now
 """""""""""""""""""""""""""""
-" ctrlp is file fuzzy search
-"Plugin 'kien/ctrlp.vim'
 "
+" ctrlp is file fuzzy search
+"Plugin 'ctrlpvim/ctrlp.vim'
 " Great helpful autocompletion
 " Uses OmniComplete which is built-in in gVim
 ""set omnifunc=syntaxcomplete#Complete
@@ -152,7 +157,7 @@ endif
 "Set Font
 """""""""
 "set guifont=Liberation\ Mono:h12
-"set guifont=Liberation\ Mono\ 12 " Linux Font
+"set guifont=Liberation\ Mono\ 12 "Linux Font
 "set guifont=Lucida\ Console:h14 " Windows Font
 "set guifont=Ubuntu\ Mono\ 14 " Linux Ubuntu Font
 set guifont=Menlo\ Regular:h16
@@ -246,9 +251,11 @@ set nofoldenable        " Don't fold by default
 
 " Completion
 " ==========
+"
+set path+=** " Search down into subfolders & Provides tab-completion for all file-related tasks
 
-"set wildmode=list:longest
-set wildmode=longest,list,full
+set wildmode=list:longest
+"set wildmode=longest,list,full
 set wildmenu                    " Enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~     " Stuff to ignore when tab completing
 set wildignore+=*vim/backups*
@@ -271,23 +278,22 @@ inoremap jj <Esc>
 nnoremap gt :bnext<cr>
 nnoremap gT :bprevious<cr>
 
+nnoremap <Leader>a :Ack!<Space>
+
 "Let K be the opposite of J
 map K i<Enter><Esc>
+"
 "\rr => refresh vimrc
 map <leader>rr :source ~/.vimrc<CR>
-", acts also like leader \
-"map , <leader> "Doesn't work when need <leader><leader> for easymotion
+map <leader>e :edit 
+"map <leader>f :CommandT<CR>
+map <leader>f :find 
+map <leader>b :b 
+map <leader>w :w<CR>
+
 
 " Plugin Options
 " ==============
-
-
-" CTRL+P options
-
-"let g:ctrlp_custom_ignore = {
-"    \ 'file': '\.pyc$',
-"    \ 'dir': 'node_modules\|\.DS_Store$\|\.git$'
-"    \ }
 
 " Airline options
 let g:airline#extensions#tabline#enabled = 1 " Enable tabs in airline
@@ -338,7 +344,9 @@ set wrap linebreak nolist       " Softwrap text
 "set autowrite                   " Save on Focus Lost
 
 "Command-t options
-let g:CommandTMaxFiles=400000
-nnoremap <Leader>a :Ack!<Space>
+let g:CommandTMaxFiles=100000 "Maximun number of cached files
+let g:CommandTSuppressMaxFilesWarning=1 " Do not show MaxFiles warning
+let g:CommandTFileScanner="find" " Does it works in windows? If not, comment it
+let g:CommandTWildIgnore=&wildignore . "*.o,*.obj,*.d,*.png,*.svn-base,*.gif,*.jpg,*.pak,*.ninja,*.so,*.a,*.gz,*.swf,*.tmp.*,*.mk"
 
 
