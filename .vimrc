@@ -95,10 +95,13 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'easymotion/vim-easymotion'
 " Autocomplete with tab
 Plugin 'ervandew/supertab'
+" Auto-tab with :Tabularize /{char}
+Plugin 'godlygeek/tabular'
+" fuzzy file finder
+Plugin 'paradigm/SkyBison'
 
 " Experimenting with these
 """"""""""""""""""""""""""
-
 
 " Not Using anymore/right now
 """""""""""""""""""""""""""""
@@ -287,7 +290,8 @@ map K i<Enter><Esc>
 map <leader>rr :source ~/.vimrc<CR>
 map <leader>e :edit 
 "map <leader>f :CommandT<CR>
-map <leader>f :find 
+"map <leader>f :find 
+map <leader>f :call SkyBison("e ")<CR>
 map <leader>b :b
 map <leader>w :w<CR>
 map <leader>q :q<CR>
