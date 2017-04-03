@@ -288,9 +288,12 @@ map <leader>rr :source ~/.vimrc<CR>
 map <leader>e :edit 
 "map <leader>f :CommandT<CR>
 map <leader>f :find 
-map <leader>b :b 
+map <leader>b :b
 map <leader>w :w<CR>
 map <leader>q :q<CR>
+map <leader>. :
+map <leader>s /
+map <leader>S ?
 
 
 " Plugin Options
