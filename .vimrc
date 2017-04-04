@@ -23,7 +23,6 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 let path='~\.vim\bundle' "Comment in WINDOWS
 call vundle#begin()
 "call vundle#begin('$HOME/vimfiles/bundle/') "WINDOWS
-"Plugin 'gmarik/vundle
 "" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -59,8 +58,6 @@ Plugin 'tpope/vim-rails'
 " ### Indispensable
 """""""""""""""""""
 
-"command-t is a file searcher
-Plugin 'wincent/command-t'
 " Ack.vim uses ack to search within files
 Plugin 'mileszs/ack.vim'
 "Airline provides a stylish appearance for the styleline
@@ -99,6 +96,8 @@ Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
 " fuzzy file finder
 Plugin 'paradigm/SkyBison'
+" ctrlp is file fuzzy search
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Experimenting with these
 """"""""""""""""""""""""""
@@ -106,8 +105,9 @@ Plugin 'paradigm/SkyBison'
 " Not Using anymore/right now
 """""""""""""""""""""""""""""
 "
-" ctrlp is file fuzzy search
-"Plugin 'ctrlpvim/ctrlp.vim'
+"command-t is a file searcher
+"Plugin 'wincent/command-t'
+" 
 " Great helpful autocompletion
 " Uses OmniComplete which is built-in in gVim
 ""set omnifunc=syntaxcomplete#Complete
@@ -134,6 +134,7 @@ call vundle#end()
 "Vundle ended so reenable filetypes
 
 filetype plugin indent on
+
 "Pull in matchit.vim, which is already bundled with Vim
 runtime! macros/matchit.vim
 
@@ -163,7 +164,7 @@ endif
 "set guifont=Liberation\ Mono\ 12 "Linux Font
 "set guifont=Lucida\ Console:h14 " Windows Font
 "set guifont=Ubuntu\ Mono\ 14 " Linux Ubuntu Font
-set guifont=Menlo\ Regular:h16
+set guifont=Menlo\ Regular:h16 " Mac Font
 set noshowmode                                  " Let airline handle the mode display
 
 " General Config
@@ -196,7 +197,9 @@ set ttyfast
 set mouse=a
 " Set this to the name of your terminal that supports mouse codes.
 " Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
-set ttymouse=xterm2
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 
 
 " Search Settings
@@ -261,7 +264,7 @@ set wildmode=list:longest
 "set wildmode=longest,list,full
 set wildmenu                    " Enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~     " Stuff to ignore when tab completing
-set wildignore+=*vim/backups*
+set wildignore+=*vim/backups*,*.so,*.swp,*.zip
 
 " Scrolling
 " =========
@@ -289,8 +292,7 @@ map K i<Enter><Esc>
 "\rr => refresh vimrc
 map <leader>rr :source ~/.vimrc<CR>
 map <leader>e :edit 
-"map <leader>f :CommandT<CR>
-"map <leader>f :find 
+map <leader>t :CtrlP<CR>
 map <leader>f :call SkyBison("e ")<CR>
 map <leader>b :b
 map <leader>w :w<CR>
@@ -320,7 +322,13 @@ let g:vim_markdown_folding_disabled=1
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw=1 "Put Nerdtree into a window
 
+"CtrlP Options
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
 
+"Pencil options
 augroup pencil
   autocmd!
   autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft'})
@@ -336,7 +344,6 @@ nnoremap <silent> <leader>pt :TogglePencil<cr>
 
 "Syntax Specific
 
-
 "Markdown options
 let g:vim_markdown_folding_disabled=1
 
@@ -347,14 +354,10 @@ let g:pencil#wrapModeDefault = 'hard'   " or 'soft'
 
 
 set wrap linebreak nolist       " Softwrap text
+
+"Autosave disabled, can be enabled with :AutoSaveTogle
 "au FocusLost * silent! wa       " Save on Focus Lost
 "set autowriteall                " Save on Focus Lost
 "set autowrite                   " Save on Focus Lost
-
-"Command-t options
-let g:CommandTMaxFiles=100000 "Maximun number of cached files
-let g:CommandTSuppressMaxFilesWarning=1 " Do not show MaxFiles warning
-let g:CommandTFileScanner="find" " Does it works in windows? If not, comment it
-let g:CommandTWildIgnore=&wildignore . "*.o,*.obj,*.d,*.png,*.svn-base,*.gif,*.jpg,*.pak,*.ninja,*.so,*.a,*.gz,*.swf,*.tmp.*,*.mk"
 
 
