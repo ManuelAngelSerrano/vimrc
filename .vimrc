@@ -281,21 +281,22 @@ set sidescroll=1
 "jj from insert mode to normal mode
 inoremap jj <Esc>
 " pasar de un buffer a otro
-nnoremap gt :bnext<cr>
-nnoremap gT :bprevious<cr>
+nnoremap gt :bnext<CR>
+nnoremap gT :bprevious<CR>
 
-nnoremap <Leader>a :Ack!<Space>
+nnoremap <Leader>ac :Ack! -i <Space>
 
 "Let K be the opposite of J
 map K i<Enter><Esc>
 "
 "\rr => refresh vimrc
 map <leader>rr :source ~/.vimrc<CR>
-map <leader>e :edit 
+map <leader>as :AutoSaveToggle<CR>
+map <leader>e :edit<Space>
 map <leader>t :CtrlP<CR>
 map <leader>p :CtrlP<CR>
 map <leader>f :call SkyBison("e ")<CR>
-map <leader>b :b
+map <leader>b :b<Space>
 map <leader>w :w<CR>
 map <leader>q :q<CR>
 map <leader>qq :q!<CR>
