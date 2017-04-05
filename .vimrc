@@ -297,6 +297,7 @@ map <leader>f :call SkyBison("e ")<CR>
 map <leader>b :b
 map <leader>w :w<CR>
 map <leader>q :q<CR>
+map <leader>qq :q!<CR>
 map <leader>. :
 map <leader>s /
 map <leader>S ?
