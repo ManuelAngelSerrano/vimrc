@@ -293,6 +293,7 @@ map K i<Enter><Esc>
 map <leader>rr :source ~/.vimrc<CR>
 map <leader>e :edit 
 map <leader>t :CtrlP<CR>
+map <leader>p :CtrlP<CR>
 map <leader>f :call SkyBison("e ")<CR>
 map <leader>b :b
 map <leader>w :w<CR>
