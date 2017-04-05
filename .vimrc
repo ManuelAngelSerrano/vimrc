@@ -300,6 +300,9 @@ map <leader>b :b<Space>
 map <leader>w :w<CR>
 map <leader>q :q<CR>
 map <leader>qq :q!<CR>
+map <leader><leader>q :q!<CR>
+map <leader>wq :wq<CR>
+map <leader>zz :wq<CR>
 map <leader>. :
 map <leader>s /
 map <leader>S ?
