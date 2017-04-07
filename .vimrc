@@ -98,6 +98,12 @@ Plugin 'godlygeek/tabular'
 Plugin 'paradigm/SkyBison'
 " ctrlp is file fuzzy search
 Plugin 'ctrlpvim/ctrlp.vim'
+"SnipMate (for snippets), depending on mw-utils and tlip.
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+" Snippets for snipMate
+Plugin 'honza/vim-snippets'
 
 " Experimenting with these
 """"""""""""""""""""""""""
@@ -296,7 +302,8 @@ map <leader>e :edit<Space>
 map <leader>t :CtrlP<CR>
 map <leader>p :CtrlP<CR>
 map <leader>f :call SkyBison("e ")<CR>
-map <leader>b :b<Space>
+"map <leader>b :b<Space>
+map <leader>b :b
 map <leader>w :w<CR>
 map <leader>q :q<CR>
 map <leader>qq :q!<CR>
