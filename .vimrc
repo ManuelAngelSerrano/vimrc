@@ -107,6 +107,7 @@ Plugin 'honza/vim-snippets'
 
 " Experimenting with these
 """"""""""""""""""""""""""
+Plugin 'vim-scripts/loremipsum'
 
 " Not Using anymore/right now
 """""""""""""""""""""""""""""
@@ -310,9 +311,10 @@ map <leader>qq :q!<CR>
 map <leader><leader>q :q!<CR>
 map <leader>wq :wq<CR>
 map <leader>zz :wq<CR>
-map <leader>. :
 map <leader>s /
 map <leader>S ?
+map <leader>x :
+map <leader>. :
 
 
 " Plugin Options
@@ -372,5 +374,4 @@ set wrap linebreak nolist       " Softwrap text
 "au FocusLost * silent! wa       " Save on Focus Lost
 "set autowriteall                " Save on Focus Lost
 "set autowrite                   " Save on Focus Lost
-
-
+"imap ,. <Esc>
