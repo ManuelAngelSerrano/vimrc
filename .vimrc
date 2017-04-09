@@ -289,7 +289,7 @@ set sidescroll=1
 "jj from insert mode to normal mode
 inoremap jj <Esc>
 "jj from ex mode (:) to normal mode
-cnoremap jj <Esc><Esc>
+"cnoremap jj <C-c>
 
 " ññ -> <Esc>
 "map ññ <Esc>
