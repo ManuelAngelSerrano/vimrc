@@ -287,6 +287,14 @@ set sidescroll=1
 
 "jj from insert mode to normal mode
 inoremap jj <Esc>
+"jj from ex mode (:) to normal mode
+cnoremap jj <Esc><Esc>
+
+" ññ -> <Esc>
+"map ññ <Esc>
+"imap ññ <Esc>
+"cmap ññ <Esc><Esc>
+
 " pasar de un buffer a otro
 nnoremap gt :bnext<CR>
 nnoremap gT :bprevious<CR>
@@ -299,6 +307,8 @@ map K i<Enter><Esc>
 "\rr => refresh vimrc
 map <leader>rr :source ~/.vimrc<CR>
 map <leader>as :AutoSaveToggle<CR>
+map <leader>max :set lines=999 columns=999<CR>
+map <leader>min : set lines=40 columns=120<CR>
 map <leader>e :edit<Space>
 map <leader>t :CtrlP<CR>
 map <leader>p :CtrlP<CR>
@@ -315,6 +325,7 @@ map <leader>s /
 map <leader>S ?
 map <leader>x :
 map <leader>. :
+cmap <leader>. <Esc><Esc>
 
 
 " Plugin Options
