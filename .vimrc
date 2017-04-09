@@ -326,6 +326,10 @@ map <leader>S ?
 map <leader>x :
 map <leader>. :
 cmap <leader>. <Esc><Esc>
+"Toggle Word Wrap
+map <leader>v :set wrap!<CR>
+"Toggle line numbers
+map <leader>n :set number!<CR>
 
 
 " Plugin Options
