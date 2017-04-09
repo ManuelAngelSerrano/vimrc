@@ -33,7 +33,7 @@ Plugin 'VundleVim/Vundle.vim'
 """"""""
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/base16-vim'
-Plugin 'reedes/vim-colors-pencil'
+"Plugin 'reedes/vim-colors-pencil'
 Plugin 'sickill/vim-monokai'
 Plugin 'tomasr/molokai'
 
@@ -84,8 +84,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 " Provides easy shortcuts for commenting out lines
 Plugin 'scrooloose/nerdcommenter'
-"Adds convenience stuff for writers
-Plugin 'reedes/vim-pencil'
 " Distraction-free writing
 Plugin 'junegunn/goyo.vim'
 " Jump to words
@@ -111,6 +109,9 @@ Plugin 'vim-scripts/loremipsum'
 
 " Not Using anymore/right now
 """""""""""""""""""""""""""""
+"
+"Adds convenience stuff for writers
+"Plugin 'reedes/vim-pencil'
 "
 "command-t is a file searcher
 "Plugin 'wincent/command-t'
@@ -325,12 +326,18 @@ map <leader>s /
 map <leader>S ?
 map <leader>x :
 map <leader>. :
-cmap <leader>. <Esc><Esc>
+"<,.> exits ex-mode
+cmap <leader>. <C-c>
 "Toggle Word Wrap
 map <leader>v :set wrap!<CR>
 "Toggle line numbers
 map <leader>n :set number!<CR>
 
+"<C-L> -> <Esc>
+inoremap <C-l> <Esc>
+vnoremap <C-l> <Esc>
+cnoremap <C-l> <C-c>
+nnoremap <C-l> :noh<CR><Esc>
 
 " Plugin Options
 " ==============
@@ -359,17 +366,19 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 "Pencil options
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft'})
-  "autocmd FileType text call pencil#init({'wrap': 'hard'})
-  autocmd FileType text call pencil#init({'wrap': 'soft'})
-augroup END
+"augroup pencil
+  "autocmd!
+  "autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft'})
+  ""autocmd FileType text call pencil#init({'wrap': 'hard'})
+  "autocmd FileType text call pencil#init({'wrap': 'soft'})
+"augroup END
 
-nnoremap <silent> <leader>ps :SoftPencil<cr>
-nnoremap <silent> <leader>ph :HardPencil<cr>
-nnoremap <silent> <leader>pn :NoPencil<cr>
-nnoremap <silent> <leader>pt :TogglePencil<cr>
+"let g:pencil#wrapModeDefault = 'hard'   " or 'soft'
+"
+"nnoremap <silent> <leader>ps :SoftPencil<cr>
+"nnoremap <silent> <leader>ph :HardPencil<cr>
+"nnoremap <silent> <leader>pn :NoPencil<cr>
+"nnoremap <silent> <leader>pt :TogglePencil<cr>
 
 
 "Syntax Specific
@@ -379,8 +388,6 @@ let g:vim_markdown_folding_disabled=1
 
 "TableMode Markdown Tables Format
 let g:table_mode_corner="|"
-
-let g:pencil#wrapModeDefault = 'hard'   " or 'soft'
 
 
 set wrap linebreak nolist       " Softwrap text
