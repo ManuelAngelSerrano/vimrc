@@ -339,6 +339,9 @@ vnoremap <C-l> <Esc>
 cnoremap <C-l> <C-c>
 nnoremap <C-l> :noh<CR><Esc>
 
+"<C-c> in normal mode quit search highlights
+nnoremap <C-c> :noh<CR><Esc>
+
 " Plugin Options
 " ==============
 
