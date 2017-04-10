@@ -102,10 +102,13 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 " Snippets for snipMate
 Plugin 'honza/vim-snippets'
+"Lorem Ipsum generator
+Plugin 'vim-scripts/loremipsum'
+"MRU - Recently used files
+Plugin 'yegappan/mru'
 
 " Experimenting with these
 """"""""""""""""""""""""""
-Plugin 'vim-scripts/loremipsum'
 
 " Not Using anymore/right now
 """""""""""""""""""""""""""""
@@ -309,11 +312,12 @@ map K i<Enter><Esc>
 map <leader>rr :source ~/.vimrc<CR>
 map <leader>as :AutoSaveToggle<CR>
 map <leader>max :set lines=999 columns=999<CR>
-map <leader>min : set lines=40 columns=120<CR>
+map <leader>min :set lines=40 columns=120<CR>
 map <leader>e :edit<Space>
 map <leader>t :CtrlP<CR>
 map <leader>p :CtrlP<CR>
 map <leader>f :call SkyBison("e ")<CR>
+map <leader>mru :MRU<CR>
 "map <leader>b :b<Space>
 map <leader>b :b
 map <leader>w :w<CR>
