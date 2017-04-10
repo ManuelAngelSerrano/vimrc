@@ -106,6 +106,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/loremipsum'
 "MRU - Recently used files
 Plugin 'yegappan/mru'
+"vim-space free . & , and make <Space> and <S-Space> repeat searches
+Plugin 'linktohack/vim-space'
 
 " Experimenting with these
 """"""""""""""""""""""""""
@@ -329,9 +331,11 @@ map <leader>zz :wq<CR>
 map <leader>s /
 map <leader>S ?
 map <leader>x :
+"<leader>. normal -> ex else -><esc>
 map <leader>. :
-"<,.> exits ex-mode
 cmap <leader>. <C-c>
+vmap <leader>. <esc>
+imap <leader>. <esc>
 "Toggle Word Wrap
 map <leader>v :set wrap!<CR>
 "Toggle line numbers
@@ -345,6 +349,12 @@ nnoremap <C-l> :noh<CR><Esc>
 
 "<C-c> in normal mode quit search highlights
 nnoremap <C-c> :noh<CR><Esc>
+
+",, -> <Esc>
+"inoremap ,, <Esc>
+"vnoremap ,, <Esc>
+"cnoremap ,, <C-c>
+"nnoremap ,, :noh<CR><Esc>
 
 " Plugin Options
 " ==============
@@ -398,14 +408,19 @@ let g:table_mode_corner="|"
 
 " AutoSave don't change the update time to 200ms
 " It's used for autosaving frecuency. Default=4000ms
-"let g:auto_save_no_updatetime = 1
+let g:auto_save_no_updatetime = 1
+
+"vim-space options
+let g:space_no_character_repeat_movements = 1
 
 "Experimenting with auto-exit from insert mode
-"Will exit from insert mode after 750ms of not typing
-"set updatetime=1000
+"Will exit from insert mode after 2seg of not typing
+"set updatetime=2000
 "autocmd CursorHoldI * stopinsert 
+
 "Make <space> get into insert-mode
 "nnoremap <space> a
+"nnoremap <CR> o
 
 set wrap linebreak nolist       " Softwrap text
 
