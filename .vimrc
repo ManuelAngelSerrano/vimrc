@@ -396,6 +396,16 @@ let g:vim_markdown_folding_disabled=1
 "TableMode Markdown Tables Format
 let g:table_mode_corner="|"
 
+" AutoSave don't change the update time to 200ms
+" It's used for autosaving frecuency. Default=4000ms
+"let g:auto_save_no_updatetime = 1
+
+"Experimenting with auto-exit from insert mode
+"Will exit from insert mode after 750ms of not typing
+"set updatetime=1000
+"autocmd CursorHoldI * stopinsert 
+"Make <space> get into insert-mode
+"nnoremap <space> a
 
 set wrap linebreak nolist       " Softwrap text
 
