@@ -331,11 +331,13 @@ map <leader>zz :wq<CR>
 map <leader>s /
 map <leader>S ?
 map <leader>x :
-"<leader>. normal -> ex else -><esc>
+"<leader>. normal -> ex-mode else -><esc>
 map <leader>. :
 cmap <leader>. <C-c>
 vmap <leader>. <esc>
 imap <leader>. <esc>
+"<leader><leader>, -> :noh - quits search highlights
+nmap <leader><leader>, :noh<CR><Esc>
 "Toggle Word Wrap
 map <leader>v :set wrap!<CR>
 "Toggle line numbers
@@ -347,14 +349,8 @@ vnoremap <C-l> <Esc>
 cnoremap <C-l> <C-c>
 nnoremap <C-l> :noh<CR><Esc>
 
-"<C-c> in normal mode quit search highlights
+"<C-c> in normal mode quits search highlights
 nnoremap <C-c> :noh<CR><Esc>
-
-",, -> <Esc>
-"inoremap ,, <Esc>
-"vnoremap ,, <Esc>
-"cnoremap ,, <C-c>
-"nnoremap ,, :noh<CR><Esc>
 
 " Plugin Options
 " ==============
