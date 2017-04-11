@@ -46,7 +46,6 @@ Plugin 'tpope/vim-rails'
 ""Plugin 'skammer/vim-css-color'
 ""Plugin 'kchmck/vim-coffee-script'
 ""Plugin 'jelera/vim-javascript-syntax'
-""Plugin 'dag/vim-fish'
 "Plugin 'elzr/vim-json'
 ""Plugin 'mustache/vim-mustache-handlebars'
 ""Plugin 'lepture/vim-jinja'
@@ -115,21 +114,6 @@ Plugin 'linktohack/vim-space'
 " Not Using anymore/right now
 """""""""""""""""""""""""""""
 "
-"Adds convenience stuff for writers
-"Plugin 'reedes/vim-pencil'
-"
-"command-t is a file searcher
-"Plugin 'wincent/command-t'
-" 
-" Great helpful autocompletion
-" Uses OmniComplete which is built-in in gVim
-""set omnifunc=syntaxcomplete#Complete
-"Plugin 'Valloric/YouCompleteMe'
-"
-" UltiSnips - Snippets engine
-"Plugin 'SirVer/ultisnips'
-" Snippets are separated from the engine. Add this if you want them:
-"Plugin 'honza/vim-snippets'
 "
 "Gives smart completions for Javascript
 ""Plugin 'marijnh/tern_for_vim'
@@ -138,9 +122,6 @@ Plugin 'linktohack/vim-space'
 "Plugin 'tpope/vim-fugitive'
 "
 "Plugin 'tpope/vim-unimpaired'
-"
-"Show git info in the gutter, sad that it and syntastic fight for space though
-"Plugin 'airblade/vim-gitgutter'
 "
 "End Vundle
 call vundle#end()
@@ -224,8 +205,11 @@ set viminfo='100,f1  " Save up to 100 marks, enable capital marks
 set ignorecase       " Ignore case while searching
 set smartcase        " smart use of case while searching
 
-"Limpiar el highligth de las búsquedas con ESC
+"Quit search highlights 
 nnoremap <esc> :noh<return><esc>
+nmap <leader><leader><leader> :noh<CR><Esc>
+nnoremap <C-c> :noh<CR><Esc>
+nnoremap <leader>h :noh<CR><Esc>
 
 " Turn Off Swap Files
 " ===================
@@ -260,6 +244,7 @@ set expandtab
 
 set list listchars=tab:\ \ ,trail:·   " Display tabs and trailing spaces visually
 "set nowrap                            " Don't wrap lines
+set wrap linebreak nolist       " Softwrap text
 
 " Folds
 " =====
@@ -291,15 +276,12 @@ set sidescroll=1
 " Custom commands
 " ===============
 
-"jj from insert mode to normal mode
+"<ESC> control
 inoremap jj <Esc>
-"jj from ex mode (:) to normal mode
-"cnoremap jj <C-c>
-
-" ññ -> <Esc>
-"map ññ <Esc>
-"imap ññ <Esc>
-"cmap ññ <Esc><Esc>
+cnoremap jj <C-c>
+cmap <leader>. <C-c>
+vmap <leader>. <esc>
+imap <leader>. <esc>
 
 " pasar de un buffer a otro
 nnoremap gt :bnext<CR>
@@ -309,7 +291,10 @@ nnoremap <Leader>ac :Ack! -i <Space>
 
 "Let K be the opposite of J
 map K i<Enter><Esc>
-"
+
+" U is redo too
+map U <C-R>
+
 "\rr => refresh vimrc
 map <leader>rr :source ~/.vimrc<CR>
 map <leader>as :AutoSaveToggle<CR>
@@ -320,7 +305,6 @@ map <leader>t :CtrlP<CR>
 map <leader>p :CtrlP<CR>
 map <leader>f :call SkyBison("e ")<CR>
 map <leader>mru :MRU<CR>
-"map <leader>b :b<Space>
 map <leader>b :b
 map <leader>w :w<CR>
 map <leader>q :q<CR>
@@ -333,24 +317,11 @@ map <leader>S ?
 map <leader>x :
 "<leader>. normal -> ex-mode else -><esc>
 map <leader>. :
-cmap <leader>. <C-c>
-vmap <leader>. <esc>
-imap <leader>. <esc>
-"<leader><leader>, -> :noh - quits search highlights
-nmap <leader><leader>, :noh<CR><Esc>
 "Toggle Word Wrap
 map <leader>v :set wrap!<CR>
 "Toggle line numbers
 map <leader>n :set number!<CR>
 
-"<C-L> -> <Esc>
-inoremap <C-l> <Esc>
-vnoremap <C-l> <Esc>
-cnoremap <C-l> <C-c>
-nnoremap <C-l> :noh<CR><Esc>
-
-"<C-c> in normal mode quits search highlights
-nnoremap <C-c> :noh<CR><Esc>
 
 " Plugin Options
 " ==============
@@ -378,22 +349,6 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
 
-"Pencil options
-"augroup pencil
-  "autocmd!
-  "autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft'})
-  ""autocmd FileType text call pencil#init({'wrap': 'hard'})
-  "autocmd FileType text call pencil#init({'wrap': 'soft'})
-"augroup END
-
-"let g:pencil#wrapModeDefault = 'hard'   " or 'soft'
-"
-"nnoremap <silent> <leader>ps :SoftPencil<cr>
-"nnoremap <silent> <leader>ph :HardPencil<cr>
-"nnoremap <silent> <leader>pn :NoPencil<cr>
-"nnoremap <silent> <leader>pt :TogglePencil<cr>
-
-
 "Syntax Specific
 
 "Markdown options
@@ -414,14 +369,7 @@ let g:space_no_character_repeat_movements = 1
 "set updatetime=2000
 "autocmd CursorHoldI * stopinsert 
 
-"Make <space> get into insert-mode
-"nnoremap <space> a
-"nnoremap <CR> o
-
-set wrap linebreak nolist       " Softwrap text
-
 "Autosave disabled, can be enabled with :AutoSaveTogle
 "au FocusLost * silent! wa       " Save on Focus Lost
 "set autowriteall                " Save on Focus Lost
 "set autowrite                   " Save on Focus Lost
-"imap ,. <Esc>
