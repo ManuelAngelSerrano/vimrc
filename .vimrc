@@ -110,6 +110,7 @@ Plugin 'linktohack/vim-space'
 
 " Experimenting with these
 """"""""""""""""""""""""""
+Plugin 'haya14busa/incsearch.vim'
 
 " Not Using anymore/right now
 """""""""""""""""""""""""""""
@@ -315,12 +316,23 @@ map <leader>zz :wq<CR>
 map <leader>s /
 map <leader>S ?
 map <leader>x :
+map <leader>m :@
 "<leader>. normal -> ex-mode else -><esc>
 map <leader>. :
 "Toggle Word Wrap
 map <leader>v :set wrap!<CR>
 "Toggle line numbers
 map <leader>n :set number!<CR>
+
+"incsearch options
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+"easymotion options
+"<leader><leader>s easymotion with n-chars
+map  <leader><leader>s <Plug>(easymotion-sn)
+omap <leader><leader>s <Plug>(easymotion-tn)
 
 
 " Plugin Options
