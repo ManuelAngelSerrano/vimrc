@@ -7,7 +7,9 @@
 " Shell stuff here
 
 " Set shell to zsh (fish and VIM don't play well together)
-set shell=bash "Comment in WINDOWS
+if !has('win32')
+  set shell=bash "Comment in WINDOWS
+endif
 "Don't dump distracting text to terminal during searches!
 "" set shellpipe=2>/dev/null>
 
@@ -18,11 +20,15 @@ set shell=bash "Comment in WINDOWS
 
 "Vundle begins here, turn off filetype temporarily
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
-"set rtp+=$HOME/vimfiles/bundle/Vundle.vim/ "WINDOWS
-let path='~\.vim\bundle' "Comment in WINDOWS
-call vundle#begin()
-"call vundle#begin('$HOME/vimfiles/bundle/') "WINDOWS
+if has('win32')
+  set rtp+=$HOME/vimfiles/bundle/Vundle.vim/ "WINDOWS
+  call vundle#begin('$HOME/vimfiles/bundle/') "WINDOWS
+else
+  "has('unix') "Includes Mac
+  set rtp+=~/.vim/bundle/Vundle.vim/
+  let path='~\.vim\bundle' "Comment in WINDOWS
+  call vundle#begin()
+endif
 "" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -155,12 +161,17 @@ endif
 
 "Set Font
 """""""""
-"set guifont=Liberation\ Mono:h12
-"set guifont=Liberation\ Mono\ 12 "Linux Font
-"set guifont=Lucida\ Console:h14 " Windows Font
-"set guifont=Ubuntu\ Mono\ 14 " Linux Ubuntu Font
-set guifont=Menlo\ Regular:h16 " Mac Font
-set noshowmode                                  " Let airline handle the mode display
+"set guifont=Ubuntu\ Mono:h20 " Linux Ubuntu Font
+set guifont=courier:h18 " Default font
+if has('unix')
+  set guifont=Liberation\ Mono:h16 "Linux Font
+else
+  set guifont=Lucida\ Console:h16 " Windows Font
+endif
+if has('mac')
+  set guifont=Menlo\ Regular:h18 " Mac Font
+endif
+set noshowmode                  " Let airline handle the mode display
 
 " General Config
 " ==============
@@ -297,7 +308,12 @@ map K i<Enter><Esc>
 map U <C-R>
 
 "\rr => refresh vimrc
-map <leader>rr :source ~/.vimrc<CR>
+if has('win32')
+  map <leader>rr :source ~/_vimrc<CR>
+else
+  "has('unix') "Inludes has('mac')
+  map <leader>rr :source ~/.vimrc<CR>
+endif
 map <leader>as :AutoSaveToggle<CR>
 map <leader>max :set lines=999 columns=999<CR>
 map <leader>min :set lines=40 columns=120<CR>
