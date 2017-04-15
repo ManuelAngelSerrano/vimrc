@@ -162,14 +162,12 @@ endif
 "Set Font
 """""""""
 "set guifont=Ubuntu\ Mono:h20 " Linux Ubuntu Font
-set guifont=courier:h18 " Default font
-if has('unix')
-  set guifont=Liberation\ Mono:h16 "Linux Font
-else
-  set guifont=Lucida\ Console:h16 " Windows Font
-endif
 if has('mac')
   set guifont=Menlo\ Regular:h18 " Mac Font
+elseif has('unix')
+  set guifont=Liberation\ Mono \16 "Linux Font
+else
+  set guifont=Lucida\ Console:h16 " Windows Font
 endif
 set noshowmode                  " Let airline handle the mode display
 
@@ -339,6 +337,10 @@ map <leader>. :
 map <leader>v :set wrap!<CR>
 "Toggle line numbers
 map <leader>n :set number!<CR>
+"Spellcheck
+map <leader>c :setlocal spell!<CR>
+map <leader>cen :setlocal spell! spelllang=en<CR>
+map <leader>ces :setlocal spell! spelllang=es_es<CR>
 
 "incsearch options
 map /  <Plug>(incsearch-forward)
