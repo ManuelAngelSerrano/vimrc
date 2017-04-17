@@ -162,12 +162,14 @@ endif
 "Set Font
 """""""""
 "set guifont=Ubuntu\ Mono:h20 " Linux Ubuntu Font
-if has('mac')
-  set guifont=Menlo\ Regular:h18 " Mac Font
-elseif has('unix')
-  set guifont=Liberation\ Mono \16 "Linux Font
-else
-  set guifont=Lucida\ Console:h16 " Windows Font
+if has('gui')
+  if has('mac')
+    set guifont=Menlo\ Regular:h18 " Mac Font
+  elseif has('unix') 
+    set guifont=Liberation\ Mono \16 "Linux Font
+  else
+    set guifont=Lucida\ Console:h16 " Windows Font
+  endif
 endif
 set noshowmode                  " Let airline handle the mode display
 
