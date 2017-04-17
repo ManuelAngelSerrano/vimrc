@@ -48,6 +48,9 @@ Plugin 'tomasr/molokai'
 """"""""
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-rails'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+Plugin 'guns/vim-sexp'
 ""Plugin 'groenewege/vim-less'
 ""Plugin 'skammer/vim-css-color'
 ""Plugin 'kchmck/vim-coffee-script'
@@ -165,7 +168,7 @@ endif
 if has('gui')
   if has('mac')
     set guifont=Menlo\ Regular:h18 " Mac Font
-  elseif has('unix') 
+  elseif has('unix')
     set guifont=Liberation\ Mono \16 "Linux Font
   else
     set guifont=Lucida\ Console:h16 " Windows Font
@@ -396,6 +399,14 @@ let g:auto_save_no_updatetime = 1
 
 "vim-space options
 let g:space_no_character_repeat_movements = 1
+
+"rainbow-parentheses options
+"Always on
+au VimEnter * RainbowParenthesesToggleAll
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 
 "Experimenting with auto-exit from insert mode
 "Will exit from insert mode after 2seg of not typing
