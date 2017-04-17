@@ -329,14 +329,15 @@ map <leader>wq :wq<CR>
 map <leader>zz :wq<CR>
 map <leader>s /
 map <leader>S ?
+map <leader>r :%s/
 map <leader>x :
 map <leader>m :@
 "<leader>. normal -> ex-mode else -><esc>
 map <leader>. :
 "Toggle Word Wrap
 map <leader>v :set wrap!<CR>
-"Toggle line numbers
-map <leader>n :set number!<CR>
+"Toggle line absolute and relative numbers (set number is already set) 
+map <leader>n :set relativenumber!<CR>
 "Spellcheck
 map <leader>c :setlocal spell!<CR>
 map <leader>cen :setlocal spell! spelllang=en<CR>
