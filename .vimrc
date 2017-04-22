@@ -169,7 +169,7 @@ if has('gui')
   if has('mac')
     set guifont=Menlo\ Regular:h18 " Mac Font
   elseif has('unix')
-    set guifont=Liberation\ Mono \16 "Linux Font
+    set guifont=Liberation\ Mono\ 16 "Linux Font
   else
     set guifont=Lucida\ Console:h16 " Windows Font
   endif
