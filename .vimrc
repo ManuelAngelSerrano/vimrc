@@ -225,6 +225,7 @@ nnoremap <esc> :noh<return><esc>
 nmap <leader><leader><leader> :noh<CR><Esc>
 nnoremap <C-c> :noh<CR><Esc>
 nnoremap <leader>h :noh<CR><Esc>
+nnoremap ºº :noh<CR><Esc>
 
 " Turn Off Swap Files
 " ===================
@@ -297,6 +298,10 @@ cnoremap jj <C-c>
 cmap <leader>. <C-c>
 vmap <leader>. <esc>
 imap <leader>. <esc>
+
+cmap ºº <C-c>
+vmap ºº <esc>
+imap ºº <esc>
 
 " pasar de un buffer a otro
 nnoremap gt :bnext<CR>
