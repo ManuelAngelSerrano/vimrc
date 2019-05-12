@@ -52,6 +52,7 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'guns/vim-sexp'
 Plugin 'elixir-editors/vim-elixir'
+Plugin 'mhinz/vim-mix-format' " Testing Mix Format for elixir
 ""Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'sheerun/vim-polyglot'
 ""Plugin 'groenewege/vim-less'
