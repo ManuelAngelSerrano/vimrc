@@ -199,7 +199,8 @@ set shortmess=filnxtToOI        " see :help shortmess
 
 set visualbell                  " Visual Beep
 set lines=40 columns=120
-set clipboard=unnamed           " Use the system clipboard, can be changed to unnamedplus
+" set clipboard=unnamed           " Use the system clipboard, can be changed to unnamedplus
+set clipboard^=unnamed,unnamedplus " Use system clipboard in all OSes (Mac, Windows AND Linux)
 
 " Mouse
 " =====
