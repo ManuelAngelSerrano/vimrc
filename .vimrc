@@ -119,12 +119,15 @@ Plugin 'vim-scripts/loremipsum'
 "MRU - Recently used files
 Plugin 'yegappan/mru'
 "vim-space free . & , and make <Space> and <S-Space> repeat searches
-Plugin 'linktohack/vim-space'
+"Plugin 'linktohack/vim-space'
 
 " Experimenting with these
 """"""""""""""""""""""""""
 Plugin 'haya14busa/incsearch.vim'
-Plugin 'zxqfl/tabnine-vim' "TabNine - Machine Learning Autocomplete
+"Plugin 'zxqfl/tabnine-vim' "TabNine - Machine Learning Autocomplete - Bloquea MacVim
+"Completor - Autocomplete
+Plugin 'maralla/completor.vim'
+
 
 " Not Using anymore/right now
 """""""""""""""""""""""""""""
