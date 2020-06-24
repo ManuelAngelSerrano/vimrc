@@ -73,7 +73,7 @@ Plugin 'sheerun/vim-polyglot'
 " Ack.vim uses ack to search within files
 Plugin 'mileszs/ack.vim'
 "Airline provides a stylish appearance for the styleline
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 "Airline themes
 Plugin 'vim-airline/vim-airline-themes'
 " Syntastic provides syntax info
@@ -385,6 +385,7 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_section_z=''
 let g:airline_theme='dark' "Airline Theme
+let g:airline#extensions#fzf#enabled = 0
 
 "Markdown options
 let g:vim_markdown_folding_disabled=1
