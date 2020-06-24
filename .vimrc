@@ -385,7 +385,7 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_section_z=''
 let g:airline_theme='dark' "Airline Theme
-let g:airline#extensions#fzf#enabled = 0
+let g:airline#extensions#fzf#enabled = 0 "Fix airline error
 
 "Markdown options
 let g:vim_markdown_folding_disabled=1
