@@ -39,7 +39,7 @@ Plugin 'VundleVim/Vundle.vim'
 """"""""
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/base16-vim'
-"Plugin 'reedes/vim-colors-pencil'
+"""Plugin 'reedes/vim-colors-pencil'
 Plugin 'sickill/vim-monokai'
 Plugin 'tomasr/molokai'
 
@@ -53,16 +53,16 @@ Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'guns/vim-sexp'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'mhinz/vim-mix-format' " Testing Mix Format for elixir
-""Plugin 'JuliaEditorSupport/julia-vim'
+"""Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'sheerun/vim-polyglot'
-""Plugin 'groenewege/vim-less'
-""Plugin 'skammer/vim-css-color'
-""Plugin 'kchmck/vim-coffee-script'
-""Plugin 'jelera/vim-javascript-syntax'
-"Plugin 'elzr/vim-json'
-""Plugin 'mustache/vim-mustache-handlebars'
-""Plugin 'lepture/vim-jinja'
-""Plugin 'vimlatex'
+"""Plugin 'groenewege/vim-less'
+"""Plugin 'skammer/vim-css-color'
+"""Plugin 'kchmck/vim-coffee-script'
+"""Plugin 'jelera/vim-javascript-syntax'
+"""Plugin 'elzr/vim-json'
+"""Plugin 'mustache/vim-mustache-handlebars'
+"""Plugin 'lepture/vim-jinja'
+"""Plugin 'vimlatex'
 
 " Functionality
 """""""""""""""
@@ -73,7 +73,7 @@ Plugin 'sheerun/vim-polyglot'
 " Ack.vim uses ack to search within files
 Plugin 'mileszs/ack.vim'
 "Airline provides a stylish appearance for the styleline
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 "Airline themes
 Plugin 'vim-airline/vim-airline-themes'
 " Syntastic provides syntax info
@@ -124,10 +124,11 @@ Plugin 'yegappan/mru'
 " Experimenting with these
 """"""""""""""""""""""""""
 Plugin 'haya14busa/incsearch.vim'
-"Plugin 'zxqfl/tabnine-vim' "TabNine - Machine Learning Autocomplete - Bloquea MacVim
+""" TabNine - bloquea Macvim
+"Plugin 'zxqfl/tabnine-vim' "TabNine - Machine Learning Autocomplete
+"Plugin 'Valloric/YouCompleteMe'
 "Completor - Autocomplete
 Plugin 'maralla/completor.vim'
-
 
 " Not Using anymore/right now
 """""""""""""""""""""""""""""
@@ -177,7 +178,7 @@ if has('gui')
   if has('mac')
     set guifont=Menlo\ Regular:h18 " Mac Font
   elseif has('unix')
-    set guifont=Liberation\ Mono\ 14 "Linux Font
+    set guifont=Liberation\ Mono\ 16 "Linux Font
   else
     set guifont=Lucida\ Console:h16 " Windows Font
   endif
@@ -203,7 +204,7 @@ set shortmess=filnxtToOI        " see :help shortmess
 
 set visualbell                  " Visual Beep
 set lines=40 columns=120
-" set clipboard=unnamed           " Use the system clipboard, can be changed to unnamedplus
+"set clipboard=unnamed           " Use the system clipboard, can be changed to unnamedplus
 set clipboard^=unnamed,unnamedplus " Use system clipboard in all OSes (Mac, Windows AND Linux)
 
 " Mouse
@@ -385,6 +386,7 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_section_z=''
 let g:airline_theme='dark' "Airline Theme
+let g:airline#extensions#fzf#enabled = 0 "Fix airline error
 
 "Markdown options
 let g:vim_markdown_folding_disabled=1
@@ -412,7 +414,7 @@ let g:table_mode_corner="|"
 let g:auto_save_no_updatetime = 1
 
 "vim-space options
-let g:space_no_character_repeat_movements = 1
+"let g:space_no_character_repeat_movements = 1
 
 "rainbow-parentheses options
 "Always on
@@ -421,6 +423,8 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+"vimtex options
+let g:tex_flavor = "latex"
 
 "Experimenting with auto-exit from insert mode
 "Will exit from insert mode after 2seg of not typing
