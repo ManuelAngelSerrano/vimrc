@@ -426,6 +426,10 @@ au Syntax * RainbowParenthesesLoadBraces
 "vimtex options
 let g:tex_flavor = "latex"
 
+"SnipMate options
+"Set new parser
+let g:snipMate = {'snippet_version' : 1}
+
 "Experimenting with auto-exit from insert mode
 "Will exit from insert mode after 2seg of not typing
 "set updatetime=2000
