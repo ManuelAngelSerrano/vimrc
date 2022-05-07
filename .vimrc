@@ -127,7 +127,7 @@ Plugin 'haya14busa/incsearch.vim'
 """ TabNine - bloquea Macvim
 "Plugin 'zxqfl/tabnine-vim' "TabNine - Machine Learning Autocomplete
 "Plugin 'Valloric/YouCompleteMe'
-"Completor - Autocomplete
+"Completor - Autocomplete 
 Plugin 'maralla/completor.vim'
 
 " Not Using anymore/right now
@@ -176,7 +176,13 @@ endif
 "set guifont=Ubuntu\ Mono:h20 " Linux Ubuntu Font
 if has('gui')
   if has('mac')
+    "set macligatures
+    "set guifont=JetBrains\ Mono:h18 " Mac Font
+    "set guifont=Space\ Mono:h18 " Mac Font
     set guifont=Menlo\ Regular:h18 " Mac Font
+    "set guifont=Hasklig\ Medium:h18 " Mac Font
+    "set guifont=Hasklig\ Semibold:h18 " Mac Font
+    "set guifont=Fira\ Code\ Retina:h18 " Mac Font
   elseif has('unix')
     set guifont=Liberation\ Mono\ 16 "Linux Font
   else
