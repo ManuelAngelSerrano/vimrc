@@ -177,6 +177,8 @@ endif
 if has('gui')
   if has('mac')
     "set macligatures
+    "set guifont=Iosevka\ Nerd\ Font\ Mono:h20 " Mac Font
+    "set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h18 " Mac Font
     "set guifont=JetBrains\ Mono:h18 " Mac Font
     "set guifont=Space\ Mono:h18 " Mac Font
     set guifont=Menlo\ Regular:h18 " Mac Font
