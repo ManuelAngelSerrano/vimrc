@@ -381,6 +381,8 @@ map g/ <Plug>(incsearch-stay)
 map  <leader><leader>s <Plug>(easymotion-sn)
 omap <leader><leader>s <Plug>(easymotion-tn)
 
+"Set cursor centered vertically in screen
+:nnoremap <Leader>z :let &scrolloff=999-&scrolloff+10<CR>
 
 " Plugin Options
 " ==============
