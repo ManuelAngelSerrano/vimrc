@@ -312,6 +312,8 @@ set sidescroll=1
 
 "<ESC> control
 inoremap jj <Esc>
+inoremap jk <Esc>
+inoremap kj <Esc>
 cnoremap jj <C-c>
 cmap <leader>. <C-c>
 vmap <leader>. <esc>
