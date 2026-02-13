@@ -124,6 +124,7 @@ Plugin 'vim-scripts/loremipsum'
 " Experimenting with these
 """"""""""""""""""""""""""
 "Plugin 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/is.vim'
 "Plugin 'zxqfl/tabnine-vim' "TabNine - Machine Learning Autocomplete
 "Completor - Autocomplete
 "Plugin 'maralla/completor.vim'
@@ -309,13 +310,13 @@ set sidescroll=1
 " ===============
 
 "<ESC> control
-"inoremap jj <Esc>
-"inoremap jk <Esc>
-"inoremap kj <Esc>
-"cnoremap jj <C-c>
-"cmap <leader>. <C-c>
-"vmap <leader>. <esc>
-"imap <leader>. <esc>
+inoremap jj <Esc>
+inoremap jk <Esc>
+inoremap kj <Esc>
+cnoremap jj <C-c>
+cmap <leader>. <C-c>
+vmap <leader>. <esc>
+imap <leader>. <esc>
 
 "cmap ºº <C-c>
 "vmap ºº <esc>
@@ -372,9 +373,9 @@ map <leader>cen :setlocal spell! spelllang=en<CR>
 map <leader>ces :setlocal spell! spelllang=es_es<CR>
 
 "incsearch options
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+"map /  <Plug>(incsearch-forward)
+"map ?  <Plug>(incsearch-backward)
+"map g/ <Plug>(incsearch-stay)
 
 "easymotion options
 "<leader><leader>s easymotion with n-chars
