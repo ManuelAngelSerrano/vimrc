@@ -327,7 +327,9 @@ cnoremap jj <C-c>
 
 " pasar de un buffer a otro
 nnoremap gt :bnext<CR>
+nnoremap gn :bnext<CR>
 nnoremap gT :bprevious<CR>
+nnoremap gp :bprevious<CR>
 
 "nnoremap <Leader>ac :Ack! -i <Space>
 
@@ -397,6 +399,7 @@ omap <leader><leader>s <Plug>(easymotion-tn)
 "Return is easymotion with words (the same as <leader><leader>w)
 "nmap <CR> <leader><leader>w
 nmap <CR> <Plug>(easymotion-w)
+nmap gw <Plug>(easymotion-w)
 
 " Plugin Options
 " ==============
