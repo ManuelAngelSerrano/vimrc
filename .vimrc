@@ -400,6 +400,8 @@ map  <leader><leader>s <Plug>(easymotion-sn)
 omap <leader><leader>s <Plug>(easymotion-tn)
 "Return is easymotion with words (the same as <leader><leader>w)
 "nmap <CR> <leader><leader>w
+nmap ,,w <Plug>(easymotion-w)
+nmap <leader><leader>w <Plug>(easymotion-w)
 nmap <CR> <Plug>(easymotion-w)
 nmap gw <Plug>(easymotion-w)
 
