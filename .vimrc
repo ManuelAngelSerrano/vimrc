@@ -384,8 +384,10 @@ map <leader>v :vsplit<CR>
 map <leader><leader>c :setlocal spell!<CR>
 "map <leader>cen :setlocal spell! spelllang=en<CR>
 "map <leader>ces :setlocal spell! spelllang=es_es<CR>
-nmap <leader>c <Plug>NERDCommenterToggle
-vmap <leader>c <Plug>NERDCommenterToggle
+map <leader>c <Plug>NERDCommenterToggle
+map gh 0
+map gl $
+map ge G
 
 "incsearch options
 "map /  <Plug>(incsearch-forward)
