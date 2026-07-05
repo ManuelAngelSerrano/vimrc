@@ -342,9 +342,11 @@ map U <C-R>
 "\rr => refresh vimrc
 if has('win32')
   map <leader>rr :source ~/_vimrc<CR>
+  map ,r :source ~/_vimrc<CR>
 else
   "has('unix') "Inludes has('mac')
   map <leader>rr :source ~/.vimrc<CR>
+  map ,r :source ~/.vimrc<CR>
 endif
 map <leader>as :AutoSaveToggle<CR>
 map <leader>- :AutoSaveToggle<CR>
@@ -385,6 +387,9 @@ map <leader><leader>c :setlocal spell!<CR>
 "map <leader>cen :setlocal spell! spelllang=en<CR>
 "map <leader>ces :setlocal spell! spelllang=es_es<CR>
 map <leader>c <Plug>NERDCommenterToggle
+map ,c <Plug>NERDCommenterToggle
+map <D-7> <Plug>NERDCommenterToggle
+map <C-s> :w<CR>
 map gh 0
 map gl $
 map ge G
