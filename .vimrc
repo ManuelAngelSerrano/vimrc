@@ -393,6 +393,9 @@ map <C-s> :w<CR>
 map gh 0
 map gl $
 map ge G
+map <BS>r :source ~/.vimrc<CR>
+map <BS>o :e ~/.vimrc<CR>
+
 
 "incsearch options
 "map /  <Plug>(incsearch-forward)
