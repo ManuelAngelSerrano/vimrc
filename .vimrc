@@ -73,9 +73,9 @@ Plugin 'guns/vim-sexp'
 "Plugin 'mileszs/ack.vim'
 "Airline provides a stylish appearance for the styleline
 "Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline'
 "Airline themes
-Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'vim-airline/vim-airline-themes'
 " Syntastic provides syntax info - Deprecated
 "Plugin 'scrooloose/syntastic'
 "Integrate with tmux
@@ -120,6 +120,9 @@ Plugin 'vim-scripts/loremipsum'
 "Plugin 'yegappan/mru'
 "vim-space free . & , and make <Space> and <S-Space> repeat searches
 "Plugin 'linktohack/vim-space'
+"Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
+Plugin 'itchyny/lightline.vim'
 
 " Experimenting with these
 """"""""""""""""""""""""""
@@ -190,7 +193,7 @@ if has('gui')
     set guifont=Lucida\ Console:h16 " Windows Font
   endif
 endif
-set noshowmode                  " Let airline handle the mode display
+set noshowmode                  " Let airline/lightline handle the mode display
 
 " General Config
 " ==============
@@ -417,14 +420,14 @@ nmap gw <Plug>(easymotion-w)
 " ==============
 
 " Airline options
-let g:airline#extensions#tabline#enabled = 1 " Enable tabs in airline
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = ' '
-"let g:airline_powerline_fonts = 1 "Enable symbols, needs a patched font
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_section_z=''
-let g:airline_theme='dark' "Airline Theme
+"let g:airline#extensions#tabline#enabled = 1 " Enable tabs in airline
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = ' '
+""let g:airline_powerline_fonts = 1 "Enable symbols, needs a patched font
+"let g:airline_left_sep=''
+"let g:airline_right_sep=''
+"let g:airline_section_z=''
+"let g:airline_theme='dark' "Airline Theme
 
 "Markdown options
 let g:vim_markdown_folding_disabled=1
@@ -463,6 +466,12 @@ au Syntax * RainbowParenthesesLoadBraces
 
 "vimtex options
 let g:tex_flavor = "latex"
+
+"indentLine options
+let g:indentLine_char = '│'
+
+"lightline options
+let g:lightline = { 'colorscheme': 'powerlineish', }
 
 "Experimenting with auto-exit from insert mode
 "Will exit from insert mode after 2seg of not typing
