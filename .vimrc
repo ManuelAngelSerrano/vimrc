@@ -215,7 +215,7 @@ set splitbelow                  " Opens horizontal split below current window
 set shortmess=filnxtToOI        " see :help shortmess
 
 set visualbell                  " Visual Beep
-set lines=40 columns=120
+set lines=50 columns=140
 " set clipboard=unnamed           " Use the system clipboard, can be changed to unnamedplus
 set clipboard^=unnamed,unnamedplus " Use system clipboard in all OSes (Mac, Windows AND Linux)
 set relativenumber 
@@ -354,7 +354,7 @@ endif
 map <leader>as :AutoSaveToggle<CR>
 map <leader>- :AutoSaveToggle<CR>
 map <leader>max :set lines=999 columns=999<CR>
-map <leader>min :set lines=40 columns=120<CR>
+map <leader>min :set lines=50 columns=140<CR>
 map <leader>e :edit<Space>
 map <leader>f :edit<Space>
 "map <leader>t :CtrlP<CR>
