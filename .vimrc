@@ -225,7 +225,7 @@ set splitbelow                  " Opens horizontal split below current window
 set shortmess=filnxtToOI        " see :help shortmess
 
 set visualbell                  " Visual Beep
-set lines=50 columns=140
+" set lines=50 columns=140
 " set clipboard=unnamed           " Use the system clipboard, can be changed to unnamedplus
 set clipboard^=unnamed,unnamedplus " Use system clipboard in all OSes (Mac, Windows AND Linux)
 set relativenumber 
