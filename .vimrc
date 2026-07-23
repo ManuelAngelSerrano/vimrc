@@ -144,11 +144,21 @@ Plugin 'haya14busa/is.vim'
 "
 "Plugin 'tpope/vim-unimpaired'
 "
+" Para evitar que en markdown se oculten cosas
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+
 "End Vundle
 call vundle#end()
 "Vundle ended so reenable filetypes
 
 filetype plugin indent on
+
+" Evitamos que el backtick falle en los bloques de código de Markdown
+augroup delimitmate_markdown
+  autocmd!
+  autocmd FileType markdown let b:delimitMate_quotes = "\" '"
+augroup END
 
 "Pull in matchit.vim, which is already bundled with Vim
 runtime! macros/matchit.vim
