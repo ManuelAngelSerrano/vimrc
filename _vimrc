@@ -139,14 +139,14 @@ else
 endif
 set undofile
 
-" Indentation and display (Replace tabs with 2 space width indentation)
+" Indentation and display (Replace tabs with 4 space width indentation)
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
 set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 "set list listchars=tab:\ \ ,trail:·   " Display tabs and trailing spaces visually
 "set nowrap                           " Don't wrap lines
 "set wrap linebreak nolist             " Softwrap text
